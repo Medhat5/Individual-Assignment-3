@@ -122,80 +122,7 @@ public class Movement : MonoBehaviour
             wallSlide = false;
         }
 
-        // Used when no longer on a wall
-        //if (Input.GetButtonUp("Fire2") || !coll.onWall || !canMove)
-        //{
-        //    wallGrab = false;
-        //    wallSlide = false;
-        //}
-
-        // When on the ground and not dashing
-        // You might want to move these to a state
-        //if (coll.onGround && !isDashing)
-        //{
-        //    wallJumped = false;
-        //    GetComponent<BetterJumping>().enabled = true;
-        //}
-
-        //// Old Climbing code
-        //if (wallGrab && !isDashing)
-        //{
-        //    // All this movement code is now in the CLIMBING state
-        //}
-        //else
-        //{
-        //    // Moved this to the leave condition in the CLIMBING state
-        //    //rb.gravityScale = 3;
-        //}
-
-        // When on the wall and not on the gorund
-        //if(coll.onWall && !coll.onGround)
-        //{
-        //    // If the player is moving towards the wall
-        //    if (xInput != 0 && !wallGrab)
-        //    {   
-        //        // Slide down the wall
-        //        wallSlide = true;
-        //        WallSlide();
-        //    }
-
-        //    // Maybe there could be an ON_WALL state?
-        //    // Try it out!
-        //}
-
-        // If not on the wall and on the ground
-        // Maybe move this to IDLE? 
-        //if (!coll.onWall || coll.onGround)
-        //    wallSlide = false;
-
-        // Jump when hitting the space bar
-        //if (Input.GetButtonDown("Jump"))
-        //{
-        //    // Sets the jump animation
-        //    anim.SetTrigger("jump");
-
-        //    // What states can you jump from?
-
-        //    // Maybe move to IDLE and/or RUNNING
-        //    if (coll.onGround)
-        //        Jump(Vector2.up, false);
-
-        //    // Maybe move to an ON_WALL state
-        //    if (coll.onWall && !coll.onGround)
-        //        WallJump();
-        //}
-
-        // If left click and if dash is not on cooldown
-        //if (Input.GetButtonDown("Fire1") && !hasDashed)
-        //{
-        //    // As long as there is some directional input
-        //    if(xRaw != 0 || yRaw != 0)
-
-        //        // Dash using raw input values
-        //        Dash(xRaw, yRaw);
-        //}
-
-        // When you land on the ground
+   
         if (coll.onGround && !groundTouch)
         {
             // GroundTouch() resets the dash, as you can only dash once per jump
@@ -230,7 +157,6 @@ public class Movement : MonoBehaviour
         // Since IDLE, RUNNING, JUMPING, FALLING all still need to use this code
 
     }
-
     private void StateMachine(PlayerState state)
     {
         // This is where the code for each state goes
